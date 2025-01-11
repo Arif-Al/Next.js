@@ -1,11 +1,9 @@
-import { Box, Button, TextField, Typography } from '@mui/material'
+import { Box, Button, TextField } from '@mui/material'
 import Link from 'next/link'
 import React from 'react'
- 
-const SignIn = () => {
-  
-  return (
 
+const SignIn = () => {
+  return (
      <>
       <div className='bg-green-300 display flex justify-between align-items-center px-5 py-3'>
      <h1 className='text-4xl' >Header</h1> 
@@ -19,7 +17,7 @@ const SignIn = () => {
      <div className="">
      </div>
       </div>
-      <h1 className='text-5xl'>THis is Sign In page</h1>
+      <h1 className='text-5xl'>THis is Sign Up page</h1>
       <div className="m-20">
       <form style={{width:"30%",border:"1px solid",padding:"30px"}} className='rounded'>
         <Box className="border ">
@@ -37,23 +35,21 @@ const SignIn = () => {
           placeholder='Email'
         />
         </Box>
+        <TextField
+           fullWidth
+          id="outlined-required"
+          label="Password"
+          placeholder='Password'
+        />
+        <TextField
+        className='my-3'
+           fullWidth
+           id="outlined-required"
+           label="Confirm Password"
+           placeholder='Confirm Password'
+         />
+         <Button fullWidth variant="contained">Sign Up</Button>
          
-        <TextField
-        className='my-3'
-           fullWidth
-           id="outlined-required"
-           label="Confirm Password"
-           placeholder='Confirm Password'
-         />
-        <TextField
-        className='my-3'
-           fullWidth
-           id="outlined-required"
-           label="Confirm Password"
-           placeholder='Confirm Password'
-         />
-         <Button fullWidth variant="contained">Sign In</Button>
-         <Typography>Don’t have an account? <Link href="/sign-up" className='text-blue-600-400 mt-20 border-b-2 border-blue-700'>Sign Up</Link> </Typography>
       </form>
       </div>
      </>
