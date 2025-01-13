@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const About = () => {
   return (
     <>
@@ -12,10 +12,11 @@ const About = () => {
         <Link href="/"> Home</Link>
         <Link href="/About" className='mx-3'>About</Link>
         <Link href="/Product" >Product</Link>
+        <Link href="/Service" className='mx-3'>Service</Link>
       </ul>
      </div>
      <div className="">
-      
+     <Link href="/SignIn"><AccountCircleIcon className='text-black' /></Link>
      </div>
       </div>
     

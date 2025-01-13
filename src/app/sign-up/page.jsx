@@ -12,6 +12,7 @@ const SignIn = () => {
         <Link href="/"> Home</Link>
         <Link href="/About" className='mx-3'>About</Link>
         <Link href="/Product" >Product</Link>
+        <Link href="/Service" className='mx-3'>Service</Link>
       </ul>
      </div>
      <div className="">
