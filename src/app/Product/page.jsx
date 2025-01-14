@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Typography } from "@mui/material";
-import Image from "next/image";
+import { Card, Grid, Typography } from "@mui/material";
 
 const Product = () => {
   const [product, setProduct] = useState([]);
@@ -24,7 +23,7 @@ const Product = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="bg-green-300 display flex justify-between align-items-center px-5 py-3">
         <h1 className="text-4xl">Header</h1>
         <div>
@@ -50,27 +49,34 @@ const Product = () => {
       {/* Render Products */}
       {product?.map((item) => {
         return (
-          <div key={item.id} className="product-item">
-            {" "}
-            {/* Added unique key here */}
-            <Typography variant="h6">{item?.title}</Typography>
-            <Typography variant="body2">
-              Category: {item?.category?.name}
-            </Typography>
-            <div>
-              <Image
-                src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-                alt="item image"
-                width={300}
-                height={300}
-              />
-              <Image src={item?.image} width={200} height={200} />
-              
-            </div>
+          <div>
+            <Grid container item sm={6} md={4} lg={3} spacing={2}>
+              <Card>
+                <div key={item.id} className="product-item p-4">
+                  {" "}
+                  {/* Added padding */}
+                  {item?.image && (
+                    <div className="flex justify-center mb-4">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-40 object-contain"
+                      />
+                    </div>
+                  )}
+                  <Typography variant="h6" className="text-center">
+                    {item?.title}
+                  </Typography>
+                  <Typography variant="body2" className="text-center">
+                    Category: {item?.category?.name}
+                  </Typography>
+                </div>
+              </Card>
+            </Grid>
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
